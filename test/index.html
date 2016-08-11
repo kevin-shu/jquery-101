@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="./qunit.css" rel="stylesheet" type="text/css" />
+    <script src="./qunit.js"></script>
+    <script src="../jquery.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>jQuery 101</title>
+  </head>
+  <body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+
+    <p class="test">hello</p>
+
+    <script>
+      QUnit.test( "hello test", function( assert ) {
+        assert.ok( $(".test").html() == "hello", "Passed!" );
+        $(".test").append("<h1>Append me!!!</h1>");
+        assert.ok( $(".test").lastChild.innerHTML == "Append me!!!", "Passed!" );
+      });
+    </script>
+
+  </body>
+</html>
